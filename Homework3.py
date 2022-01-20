@@ -15,7 +15,7 @@ else:
 apt = int(input('Enter an apartment number '))
 x = range(1, 144)
 if apt in x:
-    print('This apartment located on the floor number', int(1 + ((apt - 1) % 36) / 4),
+    print('This apartment located on the floor number', (1 + ((apt - 1) % 36) // 4),
           'and front door number:', (1 + (apt - 1) // 36))
 else:
     print('There is no such apartment in this house')
@@ -49,6 +49,3 @@ if number % 2 == 0:
     print('Number is Even')
 else:
     print('Number is Odd')
-
-
-print('Hello')
