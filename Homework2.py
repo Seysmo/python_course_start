@@ -39,6 +39,7 @@ print('Length of the entered number is', y, 'digits')
 
 # put the entered number in reverse order
 reverse = x[::-1]
+print(reverse)
 reverse_list = list(reverse)
 print(reverse_list)
 

@@ -35,6 +35,14 @@ if x % 4 == 0:
 else:
     print(x, 'is not a Leap Year')
 
+
+if x % 4 == 0 and x % 100 != 0 or x % 400 == 0:
+    print(x, 'is a Leap Year')
+else:
+    print(x, 'is not a Leap Year')
+
+
+
 # Everything else
 number = int(input('Enter the number '))
 if number < 0:
@@ -49,3 +57,9 @@ if number % 2 == 0:
     print('Number is Even')
 else:
     print('Number is Odd')
+
+if number:
+    print('number != 0')
+else:
+    print('number == 0')
+
