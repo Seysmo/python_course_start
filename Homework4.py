@@ -32,3 +32,36 @@ if (c[0] - p[0]) ** 2 + (c[1] - p[1]) ** 2 <= r ** 2:
     print('Point belongs to the circle')
 else:
     print('Point does not belong to the circle')
+
+
+# list methods
+
+num = input('Enter sequence: ')
+num_l = list(num)
+extra = input('addition = ')
+extra_l = list(extra)
+num_l.append(extra_l)
+print(num_l)
+num_l.clear()
+print(num_l)
+num_l = extra_l.copy()
+print(num_l)
+num_l.extend(extra_l)
+print(num_l)
+ind = input('check = ')
+if num_l.index(ind) == 0:
+    print('The position of the symbol is', num_l.index(ind))
+else:
+    print('ERROR')
+ins_ind = len(num_l) // 2
+ins_elem = input('Add new element')
+num_l.insert(ins_ind, ins_elem)
+print(num_l)
+num_l.remove(ins_elem)
+print(num_l)
+num_l.reverse()
+print(num_l)
+
+
+
+
