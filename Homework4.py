@@ -23,7 +23,12 @@ else:
     print('You can not participate in lucky contest ')
 
 # circle
-
-point = [input('x ='), input('y =')]
-
-print(point)
+print('Please enter coordinates of the point:')
+p = list(map(int, [input('x = '), input('y = ')]))
+print('Please enter coordinates of the circle center:')
+c = list(map(int, [input('x = '), input('y = ')]))
+r = int(input('Radius of the circle = '))
+if (c[0] - p[0]) ** 2 + (c[1] - p[1]) ** 2 <= r ** 2:
+    print('Point belongs to the circle')
+else:
+    print('Point does not belong to the circle')
