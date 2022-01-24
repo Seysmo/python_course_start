@@ -36,11 +36,10 @@ else:
 
 # list methods
 
-num = input('Enter sequence: ')
-num_l = list(num)
-extra = input('addition = ')
-extra_l = list(extra)
-num_l.append(extra_l)
+num_l = list(input('Enter sequence: '))
+extra_l = list(input('addition = '))
+for i in extra_l:
+    num_l.append(i)
 print(num_l)
 num_l.clear()
 print(num_l)
@@ -49,19 +48,26 @@ print(num_l)
 num_l.extend(extra_l)
 print(num_l)
 ind = input('check = ')
-if num_l.index(ind) == 0:
+if ind in num_l:
     print('The position of the symbol is', num_l.index(ind))
 else:
     print('ERROR')
 ins_ind = len(num_l) // 2
-ins_elem = input('Add new element')
+ins_elem = input('Add new element: ')
 num_l.insert(ins_ind, ins_elem)
 print(num_l)
 num_l.remove(ins_elem)
+num_l.pop(-1)
 print(num_l)
 num_l.reverse()
 print(num_l)
-
+num_l.sort(reverse=True)
+print(num_l)
+c = input('Seek an element: ')
+if c in num_l:
+    print('The element occurs', num_l.count(c), 'times')
+else:
+    print(c, 'is not on the list')
 
 
 
