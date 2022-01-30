@@ -1,5 +1,6 @@
 import math
 import re
+from wordsegment import load, segment
 
 # Names
 x = input('Name: ')
@@ -58,3 +59,17 @@ with open('view-source_www.columbia.edu__fdc_sample.txt', 'r') as file:
     data = cleanhtml(data)
 with open(r'view-source_www.columbia.edu__fdc_sample_app.txt', 'w') as file:
     file.write(data)
+
+
+# text breakdown
+load()
+x = input('Vovochka is moron: ')
+print(segment(x))
+x = segment(x)
+j = 0
+while len(x) > 1:
+    if len(x[j]) >= len(x[j + 1]):
+        x.remove(x[j])
+    else:
+        x.remove(x[j + 1])
+print(x)
