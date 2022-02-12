@@ -5,6 +5,7 @@ from wordsegment import load, segment
 # Names
 x = input('Name: ')
 d = 0
+# istitle - returns True if every word in string starts from capital letter
 if x[0].isupper() is True and x[1:].islower() is True and x.isalpha() is True:
     print('Correct')
 else:
@@ -19,6 +20,9 @@ n = 2
 for i in range(2, 11):
     print('Pi =', str(round(math.pi, n)))
     n += 1
+for i in range(2, 11):
+    res = f'{math.pi:.{i}f}'
+    print(res)
 
 # Sum of number
 x = input('Sentence: ')
@@ -43,7 +47,7 @@ while len(x) > 1:
     else:
         x.remove(x[j + 1])
 print(x)
-
+res = max(x, key=len)
 
 # HTML clean up
 CLEANR = re.compile('<.*?>')
@@ -73,3 +77,11 @@ while len(x) > 1:
     else:
         x.remove(x[j + 1])
 print(x)
+n = len(x)
+for i in range(len(x) // 2):
+    p = x[:i]
+    if len(p) * x.count(p) == n:
+        print(p)
+        break
+    else:
+        print('Wrong input')
