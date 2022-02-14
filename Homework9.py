@@ -1,22 +1,24 @@
+# palindrome
 def larrgestPal(n):
     high = (10 ** (n)) - 1
     low = 1 + (10 ** (n - 1))
 
-    max_num = 0
-    for i in range(high, low - 1, -1):
-        for j in range(i, low - 1, -1):
-            product = i * j
-            if (product < max_num):
-                break
-            number = product
-            reverse = 0
-            while (n != 0):
-                reverse = reverse * 10 + number % 10
-                number = number // 10
-            if (product == reverse and product > max_num):
-                max_num = product
-
-    return max_num
+    list_pali = []
+    for i in range(low - 1, high):
+        for j in range(low - 1, high):
+            if str(i*j) == str(i*j)[::-1]:
+                list_pali.append(int(i*j))
+    return max(list_pali)
 
 n = int(input('Number of digits: '))
 print(larrgestPal(n))
+
+# Progressions
+def arprog(a, b, c):
+    d = b - a
+    nextn = a + c * d
+    return nextn
+
+x = list(map(int, input('x = ').split()))
+print(x)
+print('Next element of the progression is', arprog(a=x[0], b=x[1], c=len(x)))
